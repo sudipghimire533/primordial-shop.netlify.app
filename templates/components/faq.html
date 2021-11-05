@@ -1,0 +1,15 @@
+<a name="faq"></a>
+<section class="bg-blue-600 text-gray-200">
+	<div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
+		<p class="p-2 text-sm font-medium tracking-wider text-center uppercase">Stay curious, We are happy to answer</p>
+		<h2 class="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Frequently Asked Questions</h2>
+		<div class="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
+                    {% for item in page.extra.faq %}
+			<div>
+                            <h3 class="font-semibold text-lg"> {{- item.query -}} </h3>
+                            <p class="mt-1 dark:text-coolGray-400"> {{- item.reply -}} </p>
+			</div>
+                    {% endfor %}
+		</div>
+	</div>
+</section>

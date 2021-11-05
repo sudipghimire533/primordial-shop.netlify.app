@@ -1,0 +1,55 @@
+base_url = "http://localhost"
+
+
+compile_sass = false
+build_search_index = true
+default_language = "en"
+
+
+[markdown]
+highlight_code = false
+
+
+
+[search]
+include_title = true
+include_description = true
+
+
+
+[extra]
+author = "Sudip Ghimirie"
+footer_copyright_text = "Copyright 2021. Primodial. All right reserved."
+favicon = "/favico.ico"
+brand_name = "Primodial"
+brand_logo = "/logo.png"
+stylesheets = [ "/css/tailwind.css" ]
+scripts = ["/js/toggle_menu.js"]
+
+    [[extra.menu]]
+        label = "Home"
+        path = "/"
+    [[extra.menu]]
+        label = "About"
+        path = "/about"
+    [[extra.menu]]
+        label = "Contact"
+        path = "/contact"
+    [[extra.menu]]
+        label = "Shop now"
+        path = "/shop"
+        cta = true
+        icon = "fas fa-shopping-cart"
+
+    [extra.links]
+        facebook = "https://facebook.com/#"
+        instagram = "https://instagran.com/#"
+        pinterest = "https://pinterest.com/#"
+        web = "/"
+        faq = "/contact#faq"
+        privacy_policy = "/privacy-policy"
+        terms_condition = "/terms-and-condition"
+
+    [extra.contact]
+        phone = "850-123-5021"
+        email = "info@site.com"

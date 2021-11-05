@@ -1,0 +1,9 @@
+{% set shop_section = get_section(path="shop/_index.md") %}
+{% set_global products = shop_section.pages | filter(attribute="extra.picked", value=true) %}
+{% set picked_items_count = products | length %}
+{% if picked_items_count > 0 %}
+    <a name="picked-items" ></a>
+    <h1 class="text-2xl text-gray-700 text-center mx-1 mt-5">Editor picks</h1>
+    <h3 class='text-lg text-gray-500 text-center mx-2'>Hand picked item. Just for you</h3>
+    {% include "components/product_listing.html" %}
+{% endif %}

@@ -1,0 +1,9 @@
+{% set shop_section = get_section(path="shop/_index.md") %}
+{% set slice_upto = shop_section.extra.recents_count %}
+
+<a name="picked-items" ></a>
+<h1 class="text-2xl text-gray-700 text-center mx-1 mt-5">Editor picks</h1>
+<h3 class='text-lg text-gray-500 text-center mx-2'>Hand picked item. Just for you</h3>
+
+
+{% set all_products = shop_section.pages %}

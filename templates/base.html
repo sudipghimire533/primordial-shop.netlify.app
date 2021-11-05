@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            {% if page.title %}
+                {{- page.title ~ " | " ~ config.extra.brand_name -}}
+            {% elif section.title %}
+                {{- section.title ~ " | " ~ config.extra.brand_name -}}
+            {% endif %}
+        </title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="{{- config.extra.author -}}" />
+
+        {% for style_src in config.extra.stylesheets %}
+            <link rel="stylesheet" href="{{- style_src -}}" />
+        {% endfor %}
+        {% if section.extra.styles %}
+        {% for style_src in section.extra.styles %}
+            <link rel="stylesheet" href="{{- style_src -}}">
+        {% endfor %}
+        {% endif %}
+        {% if page.extra.styles %}
+        {% for style_src in page.extra.styles %}
+            <link rel="stylesheet" href="{{- style_src -}}">
+        {% endfor %}
+        {% endif %}
+        
+        {% for script_src in config.extra.scripts %}
+            <script type="text/javascript" src="{{- script_src -}}"></script>    
+        {% endfor %}
+        {% if section.extra.scripts %}
+        {% for script_src in section.extra.scripts %}
+            <script type="text/javascript" src="{{- script_src -}}"></script>
+        {% endfor %}
+        {% endif %}
+        {% if page.extra.scripts%}
+        {% for script_src in page.extra.scripts %}
+            <script type="text/javascript" src="{{- script_src -}}"></script>
+        {% endfor %}
+        {% endif %}
+        <script src="https://kit.fontawesome.com/32aa403b75.js" crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        <!--Start of Tawk.to Script-->
+<!--script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/617e94b6f7c0440a5920cb9f/1fjb79rl3';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+        {% include "navigation.html" %}
+
+        {% block content %}
+        {% endblock content %}
+
+        {% include "footer.html" %}
+    </body>
+</html>
