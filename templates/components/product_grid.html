@@ -14,12 +14,6 @@
     </div>
 </div>
 
-{% set root_section = get_section(path="_index.md") %}
-{% for this_section_path in root_section.subsections %}
-    {% set this_section = get_section(path=this_section_path) %}
-    {% if this_section.extra.is_shop_section %}
-        {% set_global products = this_section.pages %}
-        {% include "components/product_listing.html" %}
-        {% break %}
-    {% endif %}
-{% endfor %}
+{% set shop_section = get_section(path="shop/_index.md") %}
+{% set_global products = shop_section.pages %}
+{% include "components/product_listing.html" %}
