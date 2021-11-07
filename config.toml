@@ -48,7 +48,7 @@ scripts = ["/js/toggle_menu.js"]
     [extra.links]
         facebook = "https://www.facebook.com/primodial.primodial"
         instagram = "https://instagran.com/#"
-        pinterest = "www.pinterest.com/primordial_shop"
+        pinterest = "https://www.pinterest.com/primordial_shop"
         web = "/"
         faq = "/contact#faq"
         privacy_policy = "/privacy-policy"
