@@ -1,11 +1,13 @@
+{% set_global brand_name = config.extra.brand_name %}
+
 <!DOCTYPE HTML>
 <html>
     <head>
         <title>
             {% if page.title %}
-                {{- page.title ~ " | " ~ config.extra.brand_name -}}
+                {{- page.title ~ " | " ~ brand_name -}}
             {% elif section.title %}
-                {{- section.title ~ " | " ~ config.extra.brand_name -}}
+                {{- section.title ~ " | " ~ brand_name -}}
             {% endif %}
         </title>
 

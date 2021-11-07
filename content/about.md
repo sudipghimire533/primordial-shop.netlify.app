@@ -9,12 +9,12 @@ template = "about.html"
     [[extra.team]]
     name = "Shikshya Poudel"
     post = "Founder/CEO"
-    avatar = "images/shikshya_poudel_founder_of_primodial.jpg"
+    avatar = "images/teams/shikshya-poudel.jpg"
 
     [[extra.team]]
     name = "Sudip Ghimire"
     post = "Web Developer"
-    avatar = "images/person-sudip-ghimire.jpg"
+    avatar = "images/teams/sudip-ghimire.jpg"
 
     [[extra.team]]
     name = "Jade Bradley"
