@@ -4,7 +4,7 @@ base_url = "http://localhost"
 compile_sass = false
 build_search_index = false # This is shit
 default_language = "en"
-# minify_html = true
+minify_html = true
 
 
 [markdown]
