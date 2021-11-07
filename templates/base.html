@@ -11,8 +11,9 @@
             {% endif %}
         </title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
         <meta name="author" content="{{- config.extra.author -}}" />
+        <link rel="icon" href="/logos/favicon.ico" type="image/x-icon" />
 
         {% for style_src in config.extra.stylesheets %}
             <link rel="stylesheet" href="{{- style_src -}}" />
