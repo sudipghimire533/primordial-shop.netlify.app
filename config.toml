@@ -48,12 +48,12 @@ scripts = ["/js/toggle_menu.js"]
     [extra.links]
         facebook = "https://www.facebook.com/primodial.primodial"
         instagram = "https://instagran.com/#"
-        pinterest = "https://pinterest.com/#"
+        pinterest = "www.pinterest.com/primordial_shop"
         web = "/"
         faq = "/contact#faq"
         privacy_policy = "/privacy-policy"
         terms_condition = "/terms-and-condition"
 
     [extra.contact]
-        phone = "850-123-5021"
+        phone = "+61 0450618184"
         email = "pprimodial@gmail.com"
