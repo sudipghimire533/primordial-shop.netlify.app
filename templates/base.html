@@ -1,47 +1,91 @@
+{#
+    set the brand name. This is available everywhere as global variable
+#}
 {% set_global brand_name = config.extra.brand_name %}
+
+
+
+{#
+    prepare a list of stylesheets.
+    This is combined array of stylesheets definede in config, section and page
+#}
+{% set stylesheets = config.extra.stylesheets %}
+{% if section.extra.stylesheets is defined %}
+    {% set stylesheets = stylesheets | concat(with=section.extra.stylesheets)%}
+{% endif %}
+{% if page.extra.stylesheets is defined %}
+    {% set stylesheets = stylesheets | concat(with=page.extra.stylesheet) %}
+{% endif %}
+
+
+
+{#
+    Prepare a list of scripts
+    This include all js file defined in config, section and page
+#}
+{% set scripts = config.extra.scripts %}
+{% if section.extra.scripts is defined %}
+    {% set scripts = scripts | concat(with=section.extra.scripts) %}
+{% endif %}
+{% if pages.extra.scripts is defined %}
+    {% set scripts = scripts | concat(with=section.extra.scripts) %}
+{% endif %}
+
+
+
+{#
+    Get the title to this page. Defined in page. Fallback to section title and further fallback to config title
+#}
+{% set title = config.title %}
+{% if section.title is defined %}
+    {% set title = section.title ~ " | " ~ brand_name %}
+{% endif %}
+{% if page.title is defined %}
+    {% set title = page.title ~ " | " ~ brand_name %}
+{% endif %}
+
+
+
+{#
+    Get the description for meta tag
+#}
+{% set description = config.description %}
+{% if section.description is defined %}
+    {% set description = section.description %}
+{% endif %}
+{% if page.description is defined %}
+    {% set description = page.description %}
+{% endif %}
+
+
+
+{% set author = config.extra.author %}
 
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>
-            {% if page.title %}
-                {{- page.title ~ " | " ~ brand_name -}}
-            {% elif section.title %}
-                {{- section.title ~ " | " ~ brand_name -}}
-            {% endif %}
-        </title>
+        <title>{{- title -}}</title>
 
-        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
-        <meta name="author" content="{{- config.extra.author -}}" />
         <link rel="icon" href="/logos/favicon.ico" type="image/x-icon" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="{{- author -}}" />
+        <meta name="description" content="{{- description -}}" />
+        <meta name="robots" content="index, follow" />
+        <meta name="generator" content="zola" />
+        <meta name="og:title" content="{{- title -}}" />
+        <meta name="og:description" content="{{- description -}}" />
+        <meta name="og:site_name" content="{{- brand_name | title -}}">
 
-        {% for style_src in config.extra.stylesheets %}
+
+        {% for style_src in stylesheets %}
             <link rel="stylesheet" href="{{- style_src -}}" />
         {% endfor %}
-        {% if section.extra.styles %}
-        {% for style_src in section.extra.styles %}
-            <link rel="stylesheet" href="{{- style_src -}}">
-        {% endfor %}
-        {% endif %}
-        {% if page.extra.styles %}
-        {% for style_src in page.extra.styles %}
-            <link rel="stylesheet" href="{{- style_src -}}">
-        {% endfor %}
-        {% endif %}
         
-        {% for script_src in config.extra.scripts %}
+        
+        {% for script_src in scripts %}
             <script type="text/javascript" src="{{- script_src -}}"></script>    
         {% endfor %}
-        {% if section.extra.scripts %}
-        {% for script_src in section.extra.scripts %}
-            <script type="text/javascript" src="{{- script_src -}}"></script>
-        {% endfor %}
-        {% endif %}
-        {% if page.extra.scripts%}
-        {% for script_src in page.extra.scripts %}
-            <script type="text/javascript" src="{{- script_src -}}"></script>
-        {% endfor %}
-        {% endif %}
         <script src="https://kit.fontawesome.com/32aa403b75.js" crossorigin="anonymous"></script>
     </head>
     
