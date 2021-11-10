@@ -1,4 +1,20 @@
 ---
 label: Shop item
 hide_body: false
-fields: []
+fields:
+- name: name
+  type: text
+  config:
+    required: false
+  label: Product name
+  description: The name of product
+- name: slug
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Slug
+  description: The url slug
