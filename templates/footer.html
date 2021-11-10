@@ -52,19 +52,19 @@
             &copy; {{ config.extra.footer_copyright_text -}}
     </p>
     <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-            {% if links.faq%}
+            {% if links.faq %}
             <li>
                 <a href="{{- links.faq -}}" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">F.A.Q</a>
             </li>
             {% endif %}
             
-            {% if links.privacy_policy%}
+            {% if links.privacy_policy %}
             <li>
                 <a href="{{- links.privacy_policy -}}" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Privacy Policy</a>
             </li>
             {% endif %}
             
-            {% if links.terms_condition%}
+            {% if links.terms_condition %}
             <li>
                 <a href="{{- links.terms_condition -}}" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Terms &amp; Conditions</a>
             </li>

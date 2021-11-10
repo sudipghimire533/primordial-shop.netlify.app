@@ -51,8 +51,8 @@ scripts = ["/js/toggle_menu.js"]
         pinterest = "https://www.pinterest.com/primordial_shop"
         web = "/"
         faq = "/contact#faq"
-        privacy_policy = "/privacy-policy"
-        terms_condition = "/terms-and-condition"
+        # privacy_policy = "/privacy-policy"
+        # terms_condition = "/terms-and-condition"
 
     [extra.contact]
         phone = "+61 0450618184"

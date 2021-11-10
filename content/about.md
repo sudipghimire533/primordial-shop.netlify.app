@@ -8,7 +8,7 @@ template = "about.html"
 [extra]
     [[extra.team]]
     name = "Shikshya Poudel"
-    post = "Founder/CEO"
+    post = "Founder"
     avatar = "/images/teams/shikshya-poudel.jpg"
 
     [[extra.team]]
@@ -18,22 +18,7 @@ template = "about.html"
 
     [[extra.team]]
     name = "Jade Bradley"
-    post = "Dev Ops"
-    avatar = "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80"
-
-    [[extra.team]]
-    name = "Dany Bailey"
-    post = "Software Engineer"
-    avatar = "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-
-    [[extra.team]]
-    name = "Lucy Carter"
-    post = "Graphic Designer"
-    avatar = "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-
-    [[extra.team]]
-    name = "Jade Bradley"
-    post = "Dev Ops"
+    post = "Marketer"
     avatar = "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1176&q=80"
 
 
