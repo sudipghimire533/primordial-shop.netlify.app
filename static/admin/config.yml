@@ -1,0 +1,70 @@
+media_folder: "/static/images/items"
+site_url: "https://primordial-shop.netlify.app"
+logo_url: "https://primorial-shop.netlify.app/logos/primordial-original.png"
+slug:
+  encoding: "ascii"
+
+backend:
+  name: gitlab
+  branch: main
+  repo: pprimodial/primordial-website
+
+collections:
+  - name: "items" # Used in routes, e.g., /admin/collections/blog
+    label: "Shop items" # Used in the UI
+    format: "toml-frontmatter"
+    folder: "content/shop/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - label: "Page title"
+        name: "title"
+        widget: "string"
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+
+      - label: "Url slug"
+        name: "slug"
+        widget: "string"
+
+      - label: "Extra options"
+        name: "extra"
+        widget: "object"
+        fields:
+            - label: "Product Name"
+              name: "name"
+              widget: "string"
+
+            - label: "This item is picked"
+              name: "picked"
+              widget: "boolean"
+
+            - label: "Price of this product"
+              name: "price"
+              widget: "string"
+
+            - label: "Tags"
+              name: "tags"
+              widget: "list"
+              defult: ["handmade"]
+              min: 1
+              max: 10
+
+            - label: "Cover image"
+              name: "cover_image"
+              widget: "image"
+              allow_multiple: false
+
+            - label: "Product properties"
+              name: "info"
+              widget: "list"
+              allow_add: true
+              label_singular: "Add another property"
+              fields:
+                - { label: "Product key", name: "property_name", widget: "string" }
+                - { label: "Product value", name: "property_value", widget: "string" }
+              default:
+                - { property_name: "color", property_value: "" }
+                - { property_name: "Item remaining", property_value: "1" }
