@@ -3,7 +3,11 @@ new_page_extension: md
 auto_deploy: false
 admin_path: 
 webhook_url: 
-sections: 
+sections:
+- type: document
+  path: content
+  label: Shop
+  match: "**/*"
 upload_dir: static/images/items
 public_path: ''
 front_matter_path: ''
