@@ -2,7 +2,7 @@
 
 title = "Extended pink knitted shein"
 slug = "extended-shein"
-description = "This summer wear halter neck from primordial to shine and shine everywhere. Available in all color with major green"
+description = "Primodial brings you extended version of our special pink shein. Knitted and brought to you so you can beat summet with dash."
 
 [extra]
 name = "Extended shein"
