@@ -4,10 +4,14 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: directory
+  path: ''
+  label: Dirs
+  create: all
+  match: "**/*"
 - type: document
   path: content
   label: Shop
-  match: "**/*"
 upload_dir: static/images/items
 public_path: ''
 front_matter_path: ''
