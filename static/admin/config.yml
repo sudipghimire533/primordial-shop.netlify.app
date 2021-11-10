@@ -1,22 +1,28 @@
+
 media_folder: "/static/images/items"
-site_url: "https://primordial-shop.netlify.app"
-logo_url: "https://primorial-shop.netlify.app/logos/primordial-original.png"
+public_folder: "/images/items"
+site_url: "http://localhost:1111"
+logo_url: "http://localhost:1111/logos/primordial-extended-nav.png"
+show_preview_links: true
 slug:
   encoding: "ascii"
 
 backend:
-  name: gitlab
+  name: git-gateway
   branch: main
-  repo: pprimodial/primordial-website
+  # branch: main
+  # repo: pprimodial/primordial-website
+local_backend: true
 
 collections:
-  - name: "items" # Used in routes, e.g., /admin/collections/blog
-    label: "Shop items" # Used in the UI
+  - name: "items" 
+    label: "Shop items" 
     format: "toml-frontmatter"
-    folder: "content/shop/" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+    folder: "/content/shop/"
+    preview_path: "/shop/{{fields.slug}}"
+    create: true 
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}" 
+    fields: 
       - label: "Page title"
         name: "title"
         widget: "string"
@@ -44,6 +50,7 @@ collections:
             - label: "Price of this product"
               name: "price"
               widget: "string"
+              hint: "The price must also contain the unit. Eg: $300 (AUD), NPR 200 etc"
 
             - label: "Tags"
               name: "tags"
@@ -51,6 +58,7 @@ collections:
               defult: ["handmade"]
               min: 1
               max: 10
+              hint: "Comma seperated tags that defined this product"
 
             - label: "Cover image"
               name: "cover_image"
@@ -63,8 +71,14 @@ collections:
               allow_add: true
               label_singular: "Add another property"
               fields:
-                - { label: "Product key", name: "property_name", widget: "string" }
-                - { label: "Product value", name: "property_value", widget: "string" }
+                - label: "Product key"
+                  name: "property_name"
+                  widget: "string"
+                  hint: "The name of property that will be shown in left side of product page. eg: color, size"
+                - label: "Product value"
+                  name: "property_value"
+                  widget: "string"
+                  hint: "The value of product key. Eg: if product key is color than product value may be red, green etc."
               default:
                 - { property_name: "color", property_value: "" }
                 - { property_name: "Item remaining", property_value: "1" }

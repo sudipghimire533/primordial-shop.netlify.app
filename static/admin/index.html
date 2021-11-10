@@ -1,25 +1,12 @@
+<!doctype html>
+<html>
 <head>
-    <link href="https://unpkg.com/netlify-cms/dist/cms.css" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
 </head>
 <body>
-    <script src="https://unpkg.com/netlify-cms/dist/cms.js"></script>
-    <script>
-        var preview_front_matter = createClass({
-            render: function() {
-                let entry = this.props.entry;
-                let image = entry.getIn(['data', 'image']);
-                let bg = this.props.getAsset(image);
-
-                let brand_name = "Primordial";
-                let page_title = entry.getIn(['data', 'title']);
-                let description = entry.getIn(['data', 'description']);
-                let slug = entry.getIn(['data', 'description']);
-                return h('div', {},
-                    h('h1', {}, page_title + " | " + brand_name),
-                );
-            }
-        });
-
-        // CMS.registerPreviewTemplate("items", preview_front_matter);
-    </script>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms/dist/netlify-cms.js"></script>
 </body>
+</html>
