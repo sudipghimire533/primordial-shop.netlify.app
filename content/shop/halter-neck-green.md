@@ -4,7 +4,7 @@ description = "This summer wear halter neck from primordial to shine and shine e
 slug = "halter-neck-green"
 
 [extra]
-name = "Halter neck Green is green"
+name = "Halter neck Green"
 picked = true
 price = "$20 (AUD)"
 cover_image = "/images/items/green-halter-neck-01.jpg"
