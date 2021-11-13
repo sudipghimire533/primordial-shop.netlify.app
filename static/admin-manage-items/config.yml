@@ -1,7 +1,7 @@
 media_folder: "/static/images/items"
 public_folder: "/images/items"
-site_url: "http://localhost:1111"
-logo_url: "http://localhost:1111/logos/primordial-extended-nav.png"
+site_url: "https://primordial-shop.netlify.app"
+logo_url: "https://primordial-shop.netlify.app/logos/primordial-extended-nav.png"
 show_preview_links: true
 slug:
   encoding: "ascii"
@@ -9,9 +9,9 @@ slug:
 backend:
   name: git-gateway
   branch: main
-  # branch: main
-  # repo: pprimodial/primordial-website
-local_backend: true
+  repo: pprimodial/primordial-website
+
+# local_backend: true
 
 collections:
   - name: "items" 

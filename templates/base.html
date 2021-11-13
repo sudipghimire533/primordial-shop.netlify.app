@@ -75,7 +75,9 @@
         <meta name="generator" content="zola" />
         <meta name="og:title" content="{{- title -}}" />
         <meta name="og:description" content="{{- description -}}" />
-        <meta name="og:site_name" content="{{- brand_name | title -}}">
+        <meta name="og:site_name" content="{{- brand_name -}}" />
+        <meta name="og:type" content="website" />
+        <meta name="canonical" content="{{- config.base_url -}}" />
 
 
         {% for style_src in stylesheets %}
