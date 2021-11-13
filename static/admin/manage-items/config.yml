@@ -7,7 +7,7 @@ slug:
   encoding: "ascii"
 
 backend:
-  name: git-gateway
+  name: gitlab
   branch: main
   repo: pprimodial/primordial-website
 
