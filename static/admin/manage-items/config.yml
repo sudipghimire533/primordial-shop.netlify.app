@@ -10,6 +10,7 @@ backend:
   name: gitlab
   branch: main
   repo: pprimodial/primordial-website
+  api_root: https://gitlab.com/api/v4
 
 # local_backend: true
 
