@@ -1,33 +1,33 @@
 {% set brand_name = config.extra.brand_name %}
 {% set product_name = page.extra.name %}
 {% set product_price = page.extra.price %}
-{% set product_description = page.description %}
+{% set product_description = page.description %} 
 {% set product_image = page.extra.cover_image %}
 {% set map_info = page.extra.info %}
 
 <section class="text-gray-400 bg-gray-900 body-font overflow-hidden">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="lg:w-4/5 mx-auto flex flex-wrap">
-      <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-        <h2 class="text-sm title-font text-gray-400 tracking-widest">{{- brand_name -}}</h2>
-        <h1 class="text-white text-3xl title-font font-medium mb-4">{{- product_name -}}</h1>
-        {# Add social media links here #}
-        <p class="leading-relaxed mb-4">{{- product_description -}}</p>
-        {% for info in map_info %}
-          <div class="flex border-t border-gray-700 py-2">
-          <span class="text-gray-300">{{- info.property_name -}}</span>
-          <span class="ml-auto text-white">{{- info.property_value -}}</span>
+    <div class="container px-5 py-24 mx-auto">
+        <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+                <h2 class="text-sm title-font text-gray-400 tracking-widest">{{- brand_name -}}</h2>
+                <h1 class="text-white text-3xl title-font font-medium mb-4">{{- product_name -}}</h1>
+                {# Add social media links here #}
+                <p class="leading-relaxed mb-4">{{- product_description -}}</p>
+                {% for info in map_info %}
+                <div class="flex border-t border-gray-700 py-2">
+                    <span class="text-gray-300">{{- info.property_name -}}</span>
+                    <span class="ml-auto text-white">{{- info.property_value -}}</span>
+                </div>
+                {% endfor %}
+                <div class="flex my-3">
+                    <span class="title-font font-medium text-2xl text-white">{{- product_price -}}</span>
+                    <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                        Buy
+                    </button>
+                </div>
+            </div>
+            <img alt="{{- product_name ~ ' from ' ~ brand_name ~ ' image_preview ' -}}" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{{- product_image -}}" height="400px" width="400px" load="lazy" />
         </div>
-        {% endfor %}
-        <div class="flex my-3">
-          <span class="title-font font-medium text-2xl text-white">{{- product_price -}}</span>
-            <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                Buy
-            </button>
-        </div>
-      </div>
-      <img alt="{{- product_name ~ ' from ' ~ brand_name ~ ' image_preview ' -}}" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{{- product_image -}}" height="400px" width="400px" load="lazy">
     </div>
-  </div>
 </section>
 

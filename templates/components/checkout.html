@@ -1,0 +1,57 @@
+<a name="checkout"></a>
+<section class="text-gray-400 body-font overflow-hidden bg-gray-200 bg-pink-700 sm:bg-gradient-to-br from-gray-800 via-pink-700 to-pink-500 p-2">
+    <div class="container py-10 w-full">
+
+        <div class="w-full md:w-3/4 lg:w-2/3 xl:1/2 h-auto rounded-xl m-auto overflow-hidden bg-gray-800 text-white">
+            <div class="container">
+                <div class="p-4 text-center border-b border-gray-200 bg-gray-900 relative" title="Payment by paypal not yet accepted">
+                    <span class="text-xl">Paypal</span>
+                    <i class="fab fa-paypal text-3xl px-2"></i>
+                    <span class="text-yellow-400 text-sm"><i class="fas fa-bug"></i> Currently unavailable</span>
+                </div>
+                <div class="p-4 text-center border-b border-gray-200 bg-gray-900 relative" title="Pay as we deliver">
+                    <i class="fas fa-check text-green-700 text-4xl left-8 sm:absolute"></i>
+                    <span class="text-xl">Cash On Delivery</span>
+                    <i class="fas fa-shipping-fast text-3xl px-2"></i>
+                </div>
+            </div>
+
+            <div class="container sm:grid gap-2 grid-cols-2">
+                {% set data = "
+                    First Name@first-name:
+                    Last Name@last-name:
+                    Phone@phone:
+                    Email@email:
+                    Country@country:
+                    City@city:
+                    Zip Code@zip-code:
+                    Full Address Line@address-line
+                " %}
+
+                {% for field in data | split(pat=":") %}
+                    {% set component = field | split(pat="@") %}
+                    {% if 2 != component | length %}
+                        {% continue %}
+                    {% endif %}
+                    {% set field_label = component | first | trim %}
+                    {% set field_name = component | last | trim %}
+                    <div class="p-3 border-0 border-color-white m-2">
+                        <label class="text-lg font-bold text-gray-200 block ml-2">{{- field_label -}}: </label>
+                        <input type="text" class="bg-transparent focus:outline-none text-lg border-2 border-gray-400 rounded-lg px-2text-gray-100 py-1 px-2 w-full" name="{{- field_name -}}" />
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="container">
+                <div class="p-2 text-center">
+                    <span class="text-sm">
+                        By placing order, you agree to our <a href="#" target="_blank" class="text-blue-500">Terms and condition</a>
+                    </span>
+                </div>
+                <button type="submit" name="submit" class="bg-blue-700 px-14 py-4 text-center w-full">
+                    <span class="text-gray-100 text-lg"><i class="fas fa-paper-plane px-2"></i> Place my order</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
