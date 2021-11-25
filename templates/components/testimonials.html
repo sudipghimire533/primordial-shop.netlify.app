@@ -1,30 +1,30 @@
-                <div class="container flex justify-center mx-auto pt-16 bg-300">
-                    <div>
-                        <h1 class="xl:text-4xl text-3xl text-center text-gray-800 font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto">We listen to what you have to say.</h1>
-                        <p class="text-gray-500 text-lg text-center font-normal pb-3">What souls like you are saying about us</p>
-                    </div>
-                </div>
-                <div class="w-full px-10 pt-10">
-                    <div class="container mx-auto">
-                        <div role="list" aria-label="People who reviewd us" class="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around">
-                            
-            {% for review in page.extra.review %}
-                            <div role="listitem" class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
-                                <div class="rounded overflow-hidden shadow-2xl bg-white">
-                                    <div class="absolute -mt-20 w-full flex justify-center">
-                                        <div class="h-32 w-32">
-                            <img src="{{- review.avatar -}}" alt="Display Picture of {{- review.name -}}" role="img" class="rounded-full object-cover h-full w-full shadow-2xl" />
-                                        </div>
-                                    </div>
-                                    <div class="px-6 mt-16">
-                        <h1 class="font-bold text-3xl text-center mb-1">{{- review.name -}}</h1>
-                        <p class="text-center text-gray-600 text-base pt-3 font-normal mb-5">{{- review.text -}}</p>
-                                    </div>
+<section>
+    <div class="mx-auto pt-16 bg-300">
+        <h1 class="xl:text-4xl text-3xl text-center text-gray-800 font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto">
+            We listen to what you have to say.
+        </h1>
+        <p class="text-gray-500 text-lg text-center font-normal pb-3">What people like you are saying about us</p>
+    </div>
+    <div class="w-full px-10 pt-10">
+        <div class="container mx-auto">
+            <div role="list" aria-label="People who reviewd us" class="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around">
+                {% for review in page.extra.review %}
+                    <div role="listitem" class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
+                        <div class="rounded overflow-hidden shadow-2xl bg-white">
+                            <div class="absolute -mt-20 w-full flex justify-center">
+                                <div class="h-32 w-32">
+                                    <img src="{{- review.avatar -}}" alt="Display Picture of {{review.name}}" role="img" class="rounded-full object-cover h-full w-full shadow-2xl" />
                                 </div>
                             </div>
-
-            {% endfor %}
-                            
+                            <div class="px-6 mt-16">
+                                <h1 class="font-bold text-3xl text-center mb-1">{{- review.name -}}</h1>
+                                <p class="text-center text-gray-600 text-base pt-3 font-normal mb-5">{{- review.text -}}</p>
+                            </div>
                         </div>
                     </div>
+                {% endfor %}
                 </div>
+            </div>
+        </div>
+    </div>
+</section>

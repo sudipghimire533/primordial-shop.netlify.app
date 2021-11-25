@@ -62,7 +62,7 @@
 {% set author = config.extra.author %}
 
 <!DOCTYPE HTML>
-<html>
+<html lang="en-us">
     <head>
         <title>{{- title -}}</title>
 
@@ -83,14 +83,13 @@
         {% for style_src in stylesheets %}
             <link rel="stylesheet" href="{{- style_src -}}" />
         {% endfor %}
-        
-        
+
         {% for script_src in scripts %}
             <script type="text/javascript" src="{{- script_src -}}"></script>    
         {% endfor %}
         <script src="https://kit.fontawesome.com/32aa403b75.js" crossorigin="anonymous"></script>
     </head>
-    
+
     <body>
         {% include "navigation.html" %}
 
@@ -99,6 +98,30 @@
 
 
         {% include "footer.html" %}
+
+        <div id="fb-root"></div>
+        <!-- Your Chat Plugin code -->
+        <div id="fb-customer-chat" class="fb-customerchat"></div>
     </body>
-    {% include "components/facebook_messenger_chat.html" %}
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "100242855807003");
+      chatbox.setAttribute("attribution", "biz_inbox");
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 </html>
