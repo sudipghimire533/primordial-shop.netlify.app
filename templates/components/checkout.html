@@ -45,13 +45,13 @@
                 <input type="hidden" name="product_slug" class="hidden" value="{{- page.slug -}}" readonly="" />
             </div>
 
-            <div class="container">
+            <div>
                 <div class="p-2 text-center">
-                    <span class="text-sm">
+                    <div class="text-sm">
                         By placing order, you agree to our <a href="#" target="_blank" class="text-pink-700 text-underline">Terms and condition</a>
-                    </span>
+                    </div>
+                    <div class="m-auto my-2" data-netlify-recaptcha="true"></div>
                 </div>
-                <div data-netlify-recaptcha="true"></div>
                 <button type="submit" name="checkout-data" class="bg-pink-600 px-14 py-4 cursor-pointer text-center w-full">
                     <span class="text-gray-100 text-lg" />Place my order <i class="fas fa-paper-plane px-2"></i></span>
                 </button>
