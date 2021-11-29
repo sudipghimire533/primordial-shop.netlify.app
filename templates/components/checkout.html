@@ -1,6 +1,15 @@
 <a name="checkout"></a>
 <section class="text-gray-400 relative">
-    <form name="checkouts" class="py-10 w-full z-10" action="/order-success?item={{page.slug}}" data-netlify-recaptcha="true" netlify-honeypot="hit-me" method="POST" style="background: #1d4350; background-image: linear-gradient(to right, #1d4350, #a43931);" data-netlify="true" netlify>
+    <form
+        name="checkouts"
+        class="py-10 w-full z-10"
+        action="/order-success?item={{page.slug}}"
+        data-netlify-recaptcha="true"
+        netlify-honeypot="hit-me"
+        method="POST"
+        style="background: #1d4350; background-image: linear-gradient(to right, #1d4350, #a43931);"
+        data-netlify="true"
+        >
         <div class="w-full md:w-3/4 lg:w-2/3 xl:1/2 h-auto bg-gray-400 bg-opacity-40 rounded-xl m-auto overflow-hidden text-white">
             <div class="container shadow-xl rounded-xl bg-opacity-60 bg-gray-400">
                 <div class="p-4 text-center border-b border-gray-200 relative" title="Payment by paypal not yet accepted">
@@ -39,10 +48,14 @@
                     {% set field_name = component | last | trim %}
                     <div class="p-2 border-0 border-color-white m-2">
                         <label class="text-lg font-bold text-gray-200 block ml-2" for="form-{{- field_name -}}">{{- field_label -}}: </label>
-                        <input type="text" id="form-{{- field_name -}}" class="bg-transparent focus:outline-none text-lg border-2 border-gray-300 rounded-lg px-2 text-white py-1 px-2 w-full" name="{{- field_name -}}" title="Your {{ field_label }}" required="" />
+                        <input
+                            type="text"
+                            class="bg-transparent focus:outline-none text-lg border-2 border-gray-300 rounded-lg px-2 text-white py-1 px-2 w-full" name="{{- field_name -}}"
+                            title="Your {{ field_label }}"
+                            required="" />
                     </div>
                 {% endfor %}
-                <input type="hidden" name="product_slug" class="hidden" value="{{- page.slug -}}" readonly="" />
+                <input type="text" name="product_slug" class="hidden" value="{{- page.slug -}}" readonly="true" />
                 <div class="m-auto my-2 w-full flex justify-center"><div data-netlify-recaptcha="true"></div></div>
             </div>
 
@@ -52,8 +65,7 @@
                         By placing order, you agree to our <a href="#" target="_blank" class="text-pink-700 text-underline">Terms and condition</a>
                     </div>
                 </div>
-                <button type="submit" class="bg-pink-600 px-14 py-4 cursor-pointer text-center w-full">
-                    <span class="text-gray-100 text-lg" />Place my order <i class="fas fa-paper-plane px-2"></i></span>
+                <button type="submit" class="bg-pink-600 px-14 py-4 cursor-pointer text-center w-full"> Place my order <i class="fas fa-paper-plane px-2"></i>
                 </button>
             </div>
         </div>
