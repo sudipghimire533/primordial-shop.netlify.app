@@ -46,7 +46,7 @@ scripts = ["/js/toggle_menu.js"]
         icon = "fas fa-shopping-cart"
 
     [extra.links]
-        facebook = "https://www.facebook.com/primodial.primodial"
+        facebook = "https://www.facebook.com/primodial.shop"
         instagram = "https://instagran.com/#"
         pinterest = "https://www.pinterest.com/primordial_shop"
         web = "/"
